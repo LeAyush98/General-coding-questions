@@ -95,3 +95,34 @@ def pattern9():
         k -= 1
 
 pattern9()
+
+def pattern10():
+    k = 5
+    for i in range(5):
+        print(f"{k*' '}", end="")
+        for j in range(2*i+1):
+            if j == 0 or j == 2*i:
+                print("*", end="")
+            else:
+                print("_", end="")    
+        k=k-1    
+        print("\n")
+
+# pattern10()
+
+def pattern11():
+    rows = [[] for k in range(6)]
+    for i in range(6):
+        for j in range(i+1):
+            if j == i or j == 0:
+                print(1, end=" ")
+                var = 1
+            else:
+                print(rows[i-1][j-1] + rows[i-1][j], end=" ")
+                var = rows[i-1][j-1] + rows[i-1][j]
+            rows[i].append(var)    
+          
+        print("\n")
+    return rows
+
+pattern11()
