@@ -229,7 +229,7 @@ def pattern19():
             count +=1        
         print()
 
-pattern19()
+# pattern19()
 
 
 
@@ -246,3 +246,105 @@ def pattern20():
         print()
 
 # pattern20()
+
+def pattern21():
+    n = 5
+    count = 1
+    for i in range(2*n):
+        if i < n:
+            for j in range(i+1):
+                if i % 2 == 0:
+                    print("*", end=" ")
+                else:
+                    print("-", end=" ")
+        else:
+            for j in range(n-count):
+                if i % 2 == 0:
+                    print("*", end=" ")
+                else:
+                    print("-", end=" ")
+            count+=1
+        print()
+
+# pattern21()
+
+def pattern22():
+    n = 5
+    k = 5
+    space = 0
+    for i in range(n+1):
+        print(f"{space*' '}", end="")
+        for j in range(2*k+1, 0, -1):
+            if j == 2*k+1 or j == 1:
+                print("*", end="")
+            else:
+                print("-", end="")
+        space +=1
+        k -=1
+        print()
+
+# pattern22()
+
+def pattern23():
+    n = 5
+    space = 5
+    count = 0
+    for i in range(2*n+1):
+        if i < n:
+            print(f"{space* ' '}", end="")
+            for j in range(2*i+1):
+                if i% 2 == 0:
+                    print("x", end="")
+                else:
+                    print("-", end="")
+            space -=1
+        else:
+            print(f"{space* ' '}", end="")
+            for j in range(2*n+1, 2*count, -1):
+                if i% 2 == 0:
+                    print("x", end="")
+                else:
+                    print("-", end="")
+            space +=1
+            count +=1
+        print()
+
+pattern23()                    
+
+def pascal():
+    space = 5
+    rows = [[] for k in range(5)]
+    for i in range(5):
+        print(f"{space*' '}", end="")
+        for j in range(i+1):
+            if j == 0 or j == i:
+                var = 1
+            else:
+                var = rows[i-1][j] + rows[i-1][j-1]
+            print(var, end=" ")
+            rows[i].append(var) 
+        space -=1    
+        print()           
+
+# pascal()
+
+def alphabet1():
+    start = 65
+    for i in range(5):
+        for j in range(i+1):
+            print(chr(start), end=" ")
+        start +=1
+        print()
+
+# alphabet1()
+
+def alphabet2(n):
+    start = 65
+    for i in range(n):
+        for j in range(i+1):
+            print(chr(start), end=" ")
+            start +=1
+        print()
+
+# alphabet2(int(input("how many rows ")))
+
